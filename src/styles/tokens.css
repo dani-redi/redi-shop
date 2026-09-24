@@ -1,0 +1,289 @@
+/*
+ * Design tokens da RediShop.
+ * Valores de origem em :root; @theme inline expõe cada um como utilitário Tailwind
+ * (bg-brand, text-hero-ink, shadow-card, font-hand…).
+ */
+:root {
+  --radius: 1rem;
+
+  /* Base */
+  --background: oklch(100% 0 0);
+  --foreground: oklch(22% 0.05 290);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(12.9% 0.042 264.695);
+  --primary: oklch(48% 0.24 296);
+  --primary-foreground: oklch(99% 0.005 300);
+  --muted: oklch(96.8% 0.007 247.896);
+  --muted-foreground: oklch(55.4% 0.046 257.417);
+  --border: oklch(92.9% 0.013 255.508);
+  --input: oklch(92.9% 0.013 255.508);
+  --ring: oklch(70.4% 0.04 256.788);
+  --destructive: oklch(57.7% 0.245 27.325);
+
+  /* Marca */
+  --brand: oklch(48% 0.24 296);
+  --brand-deep: oklch(32% 0.16 292);
+  --brand-soft: oklch(72% 0.15 300);
+  --brand-tint: oklch(96% 0.025 300);
+  --brand-pink: oklch(73% 0.19 342);
+  --brand-lilac: #efeafe;
+
+  /* Hero */
+  --hero-deep: oklch(90.2% 0.0569 304.54);
+  --hero-ink: oklch(16.9% 0.0719 303.04);
+  --hero-mint: oklch(55.9% 0.2639 292.79);
+  --hero-card: oklch(100% 0 0);
+  --hero-card-muted: oklch(96.3% 0.0136 299.8);
+  --hero-brand-panel: oklch(96.3% 0.0136 299.8);
+  --hero-hot: oklch(93% 0.045 30);
+  --hero-hot-foreground: oklch(62% 0.22 30);
+  --hero-purple-tag: oklch(91% 0.065 300);
+
+  /* Utilitárias */
+  --mint: oklch(78% 0.15 165);
+  --sky: oklch(82% 0.1 230);
+  --whatsapp: oklch(73% 0.19 149);
+  --whatsapp-foreground: oklch(100% 0 0);
+  --store-blue: oklch(62% 0.18 246);
+  --store-green: oklch(72% 0.18 151);
+  --store-red: oklch(64% 0.22 27);
+  --store-yellow: oklch(84% 0.16 88);
+
+  /* Efeitos */
+  --gradient-brand: linear-gradient(135deg, var(--brand-deep), var(--brand));
+  --gradient-hero:
+    radial-gradient(1200px 600px at 15% 0%, oklch(94% 0.05 300) 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, oklch(95% 0.04 280) 0%, transparent 60%),
+    linear-gradient(180deg, oklch(98.5% 0.01 300), oklch(100% 0 0));
+  /* Lilás da hero da home com brilho atrás dos cards, em vez do bloco chapado. */
+  --gradient-hero-home:
+    radial-gradient(60% 45% at 50% 62%, oklch(97% 0.03 300 / 0.9) 0%, transparent 70%),
+    linear-gradient(180deg, var(--hero-deep) 0%, oklch(92.5% 0.045 302) 100%);
+  /* Faixas escuras: brilho roxo sutil atrás do botão. */
+  --gradient-cta:
+    radial-gradient(50% 70% at 50% 100%, oklch(48% 0.24 296 / 0.45) 0%, transparent 70%),
+    radial-gradient(40% 60% at 50% 0%, oklch(40% 0.16 292 / 0.35) 0%, transparent 70%);
+  /* Fundos lilás suaves das seções de conteúdo. */
+  --gradient-lilac-soft: linear-gradient(180deg, #f6f3ff 0%, #fbfafe 55%, #f7f4ff 100%);
+  --gradient-lilac-mid: linear-gradient(180deg, #fbfafe 0%, #f5f1ff 45%, #fbfafe 100%);
+  /* Brilho atrás dos celulares de mockup. */
+  --gradient-device-glow: radial-gradient(
+    closest-side,
+    oklch(72% 0.15 300 / 0.45) 0%,
+    oklch(72% 0.15 300 / 0) 100%
+  );
+
+  /*
+   * Layout mobile first: os valores base são do celular; 48rem (768px) e 64rem (1024px)
+   * só acrescentam. Tudo em múltiplos de 4px.
+   */
+  --gutter: 1.25rem;
+  --section-y: 3.5rem;
+  --content-gap: 2rem;
+  --header-h: 3.5rem;
+  --logo-h: 1.625rem;
+  --logo-h-footer: 2.25rem;
+  /* Celular do "Venda por conta própria": no mobile a tela vira card em largura total. */
+  --phone-w: calc(100vw - 2 * var(--gutter));
+
+  /* "Do produto ao post": card do produto e palco dos 3 mockups (no celular, carrossel). */
+  --share-card-w: min(100vw - 2 * var(--gutter), 38rem);
+  /* Cada mockup ocupa 78% da largura útil: palco = 3 itens + 2 gaps de 3cqw (1 item = 31,33%). */
+  --tools-stage-w: calc((100vw - 2 * var(--gutter)) * 0.78 / 0.3133);
+
+  /* Texto mínimo dentro de mockups (medidos em cqw): 12px no mobile, livre no desktop. */
+  --mockup-text-min: 0.75rem;
+
+  /* Tipografia: fixa no mobile, fluida de 768px até o valor de desktop em 1280px. */
+  --fs-display: 2.125rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.1875rem;
+  --fs-lead: 1.0625rem;
+  --fs-question: 1rem;
+
+  /* Sombras: uma camada só no mobile (mais barato de pintar); duas a partir do tablet. */
+  --elevation-1: 0 1px 3px oklch(28% 0.09 292 / 0.1);
+  --elevation-2: 0 4px 12px -2px oklch(28% 0.09 292 / 0.12);
+  --elevation-3: 0 12px 24px -12px oklch(32% 0.12 294 / 0.22);
+  --elevation-4: 0 24px 48px -24px oklch(35% 0.16 294 / 0.4);
+
+  /* Movimento */
+  --reveal-distance: 1rem;
+  --reveal-duration: 600ms;
+  --reveal-stagger: 60ms;
+}
+
+/* Largura em em da linha mais longa do título da hero no desktop (ver hero-fit-title). */
+:root {
+  --hero-title-fit-wide: 17.1;
+}
+
+:root:lang(en) {
+  --hero-title-fit-wide: 21.2;
+}
+
+:root:lang(es) {
+  --hero-title-fit-wide: 19.3;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --gutter: 2rem;
+    --section-y: 6rem;
+    --content-gap: 3rem;
+    --header-h: 4rem;
+    --logo-h: 1.05rem; /* 60% de 1.75rem */
+    --phone-w: clamp(15rem, 68vw, 21.25rem);
+    --tools-stage-w: 100%;
+    --mockup-text-min: 0px;
+
+    --fs-display: clamp(2.75rem, 1.25rem + 3.125vw, 3.75rem);
+    --fs-h2: clamp(2.125rem, 1.1875rem + 1.953vw, 2.75rem);
+    --fs-h3: clamp(1.25rem, 0.875rem + 0.781vw, 1.5rem);
+    --fs-lead: clamp(1.125rem, 0.9375rem + 0.391vw, 1.25rem);
+    --fs-question: 1.0625rem;
+
+    --elevation-1: 0 1px 2px oklch(28% 0.09 292 / 0.06), 0 1px 3px oklch(28% 0.09 292 / 0.08);
+    --elevation-2:
+      0 4px 12px -2px oklch(28% 0.09 292 / 0.1), 0 2px 4px -2px oklch(28% 0.09 292 / 0.06);
+    --elevation-3:
+      0 16px 32px -12px oklch(32% 0.12 294 / 0.18), 0 4px 8px -4px oklch(28% 0.09 292 / 0.08);
+    --elevation-4:
+      0 32px 64px -24px oklch(35% 0.16 294 / 0.38), 0 12px 24px -12px oklch(28% 0.09 292 / 0.16);
+  }
+}
+
+@media (width >= 64rem) {
+  :root {
+    --gutter: 2.5rem;
+    --section-y: 7.5rem;
+    --content-gap: 4rem;
+    --header-h: 4.75rem;
+    --logo-h: 1.275rem; /* 60% de 2.125rem */
+    --tools-stage-w: min(60rem, 100%);
+  }
+}
+
+@theme {
+  /* Raios: controles, cards, cards grandes/destaques e moldura de celular. */
+  --radius-control: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-panel: 1.25rem;
+  --radius-device: 2rem;
+
+  /* Larguras: container da página, blocos de leitura (FAQ) e subtítulos (~60 caracteres). */
+  --container-page: 75rem;
+  --container-reading: 45rem;
+  --container-lead: 35rem;
+
+  /* Tipografia: tamanhos em :root (--fs-*), com line-height/peso/tracking aqui. */
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 700;
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+  --text-lead--line-height: 1.5;
+  --text-nav: 0.9375rem;
+  --text-nav--line-height: 1.5;
+  --text-nav--font-weight: 500;
+  --text-question--line-height: 1.4;
+  --text-question--font-weight: 600;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-eyebrow: clamp(0.75rem, 0.724rem + 0.111vw, 0.8125rem);
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.12em;
+  --text-eyebrow--font-weight: 600;
+
+  /* Anotações manuscritas (Caveat). */
+  --text-note: clamp(1.25rem, 1.198rem + 0.221vw, 1.375rem);
+  --text-note--line-height: 1.15;
+  --text-note--font-weight: 600;
+
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@theme inline {
+  /* Sombras em 4 níveis, com tom roxo/navy (valores em :root). Cards no 2–3; flutuantes da hero no 4. */
+  --shadow-level-1: var(--elevation-1);
+  --shadow-level-2: var(--elevation-2);
+  --shadow-level-3: var(--elevation-3);
+  --shadow-level-4: var(--elevation-4);
+  --shadow-soft: var(--elevation-2);
+  --shadow-card: var(--elevation-3);
+  --shadow-hero-product: var(--elevation-4);
+
+  --text-display: var(--fs-display);
+  --text-h2: var(--fs-h2);
+  --text-h3: var(--fs-h3);
+  --text-lead: var(--fs-lead);
+  --text-question: var(--fs-question);
+
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* Espaçamentos responsivos (valores em :root): px-gutter, py-section, mt-content, pt-header. */
+  --spacing-gutter: var(--gutter);
+  --spacing-section: var(--section-y);
+  --spacing-content: var(--content-gap);
+  --spacing-header: var(--header-h);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-lilac: var(--brand-lilac);
+
+  --color-hero-deep: var(--hero-deep);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-mint: var(--hero-mint);
+  --color-hero-card: var(--hero-card);
+  --color-hero-card-muted: var(--hero-card-muted);
+  --color-hero-brand-panel: var(--hero-brand-panel);
+  --color-hero-hot: var(--hero-hot);
+  --color-hero-hot-foreground: var(--hero-hot-foreground);
+  --color-hero-purple-tag: var(--hero-purple-tag);
+
+  --color-mint: var(--mint);
+  --color-sky: var(--sky);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-store-blue: var(--store-blue);
+  --color-store-green: var(--store-green);
+  --color-store-red: var(--store-red);
+  --color-store-yellow: var(--store-yellow);
+
+  --animate-hero-enter: hero-enter 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}

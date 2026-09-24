@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "home": {
+      "title": "RediShop | Vende productos de grandes marcas",
+      "description": "Vende productos de grandes marcas, ofrece descuentos a tus clientes y gana comisión. La IA de Redi te muestra qué vender, a quién y cuándo.",
+      "ogTitle": "RediShop — Una app que te ayuda a vender más",
+      "ogDescription": "Vende productos de grandes marcas con ofertas exclusivas para tus clientes e IA que te muestra qué vender, a quién y cuándo."
+    },
+    "brands": {
+      "title": "Para marcas | Conecta tu e-commerce a la red RediShop",
+      "description": "Conecta tu e-commerce a RediShop y vende a través de una red de catálogos, afiliados y creadores de contenido.",
+      "ogTitle": "RediShop para marcas",
+      "ogDescription": "Convierte tu operación actual en un nuevo canal de ventas con la red RediShop."
+    }
+  },
+  "nav": {
+    "sellers": "Para vendedores",
+    "brands": "Para marcas",
+    "sell": "Quiero vender mis productos",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "home": "RediShop — página de inicio"
+  },
+  "languages": {
+    "pt-BR": "Português",
+    "en": "English",
+    "es": "Español"
+  },
+  "hero": {
+    "eyebrow": "TU RED DE VENTAS",
+    "titleA": "Recomienda productos",
+    "titleB": "y gana comisión",
+    "titleM1": "Recomienda productos y gana",
+    "titleM2": "comisión",
+    "titleHighlight": "con IA a tu lado.",
+    "description": "En RediShop creas tu catálogo, agregas productos y recibes un feed de ventas con ofertas y oportunidades directo de las marcas.",
+    "descM1": "En RediShop creas tu catálogo, agregas productos",
+    "descM2": "y recibes un feed de ventas con ofertas y",
+    "descM3": "oportunidades directo de las marcas.",
+    "products": [
+      {
+        "label": "En tendencia",
+        "message": "Vendiendo mucho en la red",
+        "brand": "ESTELLE LAURENT",
+        "name": "Sérum Renovador Lumière",
+        "commission": "Comisión: 18%"
+      },
+      {
+        "label": "Producto de la semana",
+        "message": "Cambio de temporada",
+        "brand": "ROCHELLE DERM",
+        "name": "Gel Limpiador Pureclar",
+        "commission": "Comisión: 20%"
+      },
+      {
+        "label": "Comisión doble",
+        "message": "De 15% a 30%",
+        "brand": "ONE",
+        "name": "Zapatilla One",
+        "commission": "Comisión: 30%"
+      }
+    ],
+    "feed": {
+      "titleA": "Tu Feed de ",
+      "titleHighlight": "Ventas",
+      "today": "Hoy",
+      "opportunities": {
+        "title": "5 oportunidades hoy",
+        "detail": "Potencial de $300 en comisiones."
+      },
+      "client": {
+        "name": "Camila",
+        "tag": "Cliente recurrente",
+        "textA": "Camila compra este producto cada mes. ",
+        "textHighlight": "Hoy es el día de reponer.",
+        "message": "Hola Camila, tu gel llegó y está en promoción...",
+        "cta": "Enviar por WhatsApp"
+      }
+    },
+    "benefits": [
+      {
+        "title": "Es gratis",
+        "detail": "Sin mensualidad ni kit"
+      },
+      {
+        "title": "Sin inventario",
+        "detail": "Pago y entrega directo de las marcas."
+      },
+      {
+        "title": "Tu Tienda",
+        "detail": "crea tu página tunombre.redi.shop"
+      }
+    ],
+    "brandsTitle": "Grandes marcas.",
+    "commissionsA": "Comisiones de",
+    "commissionsHighlight": "hasta {{max}}%."
+  },
+  "signupCta": {
+    "title": "Crea tu RediShop gratis",
+    "subtitle": "Regístrate ahora para recibir tu invitación a RediShop.",
+    "button": "Quiero mi RediShop →",
+    "note": "Gratis · Sin mensualidad · Sin kit · Sin stock",
+    "appStore": "Descargar en la App Store",
+    "googlePlay": "Descargar en Google Play"
+  },
+  "salesAssistant": {
+    "eyebrow": "TU BRAZO DERECHO EN LAS VENTAS",
+    "title": "Vende por cuenta propia.",
+    "titleHighlight": "No solo.",
+    "description": "Redi trabaja contigo todos los días, mostrándote qué vender, a quién y cuándo.",
+    "phone": {
+      "greeting": "¡Hola, Camila!",
+      "greetingSub": "¿Vendemos hoy?",
+      "balance": "Saldo por recibir",
+      "balanceValue": "R$ 892,50",
+      "pending": "Pagos pendientes",
+      "pendingValue": "R$ 241,00",
+      "guide": "Tu guía de hoy",
+      "seeAll": "Ver todos",
+      "opportunities": [
+        {
+          "tag": "PRODUCTO EN ALZA",
+          "title": "Creatina Monohidratada",
+          "description": "Está entre los más vendidos de la red esta semana."
+        },
+        {
+          "tag": "HORA DE REPONER",
+          "title": "3 clientes pueden comprar de nuevo.",
+          "description": ""
+        },
+        {
+          "tag": "OFERTA NUEVA",
+          "title": "Protector Solar FPS 70",
+          "description": "La marca lanzó una nueva condición hasta el domingo."
+        },
+        {
+          "tag": "FECHA CERCANA",
+          "title": "Día del Padre en 12 días.",
+          "description": "Mira productos para promocionar ahora."
+        }
+      ],
+      "nav": ["Inicio", "Productos", "Clientes", "Ventas", "Más"]
+    },
+    "notes": [
+      "Oportunidades de la red",
+      "Tus clientes siempre cerca",
+      "Todo en un solo lugar",
+      "Más ventas todos los días"
+    ],
+    "closing": "Oportunidades de la red, ofertas de las marcas y tus clientes. ",
+    "closingHighlight": "Todo organizado para ayudarte a vender más."
+  },
+  "howItWorks": {
+    "eyebrow": "EN POCOS MINUTOS",
+    "title": "Tu RediShop queda",
+    "titleHighlight": "lista para vender.",
+    "subtitle": "Es simple, rápido y gratuito. En 4 pasos, ya puedes empezar a vender con el apoyo de la red.",
+    "steps": [
+      {
+        "title": "Crea tu RediShop",
+        "before": "Gana tu dirección ",
+        "highlight": "tunombre.redi.shop",
+        "after": ". ¡Es gratis!"
+      },
+      {
+        "title": "Elige qué quieres vender",
+        "before": "Elige tus productos y ve las comisiones (",
+        "highlight": "hasta {{max}}% de comisión",
+        "after": ")."
+      },
+      {
+        "title": "Comparte con tus clientes",
+        "before": "WhatsApp, Telegram, Instagram, TikTok, lives o redes sociales.",
+        "highlight": "",
+        "after": ""
+      },
+      {
+        "title": "Tú vendes. La marca entrega.",
+        "before": "Tu cliente paga a la marca. Redi se encarga de tu comisión.",
+        "highlight": "",
+        "after": ""
+      }
+    ],
+    "network": {
+      "eyebrow": "AL ENTRAR EN REDISHOP",
+      "titleA": "Entras en una red de ",
+      "titleHighlight": "productos y oportunidades.",
+      "items": [
+        {
+          "title": "Productos",
+          "description": "de grandes marcas para que elijas."
+        },
+        {
+          "title": "Ofertas",
+          "description": "condiciones exclusivas para tus clientes."
+        },
+        {
+          "title": "Contenidos",
+          "description": "listos para compartir."
+        },
+        {
+          "title": "Tendencias",
+          "description": "de lo que está vendiendo en la red."
+        }
+      ],
+      "closingA": "La red trae las oportunidades.",
+      "closingB": "Tú vendes a tus clientes."
+    }
+  },
+  "contentTools": {
+    "eyebrow": "HERRAMIENTAS PARA VENDER",
+    "titleA": "Del producto al post. ",
+    "titleHighlight": "Listo para vender.",
+    "subtitle": "Contenido listo, a tu manera, para compartir con tus clientes.",
+    "product": {
+      "tag": "20% OFF",
+      "title": "Whey Aislado",
+      "description": "Más energía para tu día a día.",
+      "buy": "Comprar"
+    },
+    "noteTag": "Esta etiqueta se puede agregar a cualquier contenido.",
+    "noteShare": "Listo para compartir con tus clientes.",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "tiktok": "TikTok",
+      "story": "Story"
+    },
+    "whatsapp": {
+      "message1": "¡Mira esta novedad que encontré para ti! 💪",
+      "message2": "¡Ideal para quien busca más energía y resultados!",
+      "time": "10:24",
+      "input": "Mensaje..."
+    },
+    "tiktok": {
+      "caption": "Más energía para tu día a día. 💪",
+      "tags": "#Nutrición #Performance"
+    },
+    "story": {
+      "handle": "mi.redishop",
+      "time": "2h",
+      "title": "Más energía para tu día a día.",
+      "cta": "VER EN EL CATÁLOGO"
+    }
+  },
+  "faq": {
+    "title": "¿Quedó alguna duda?",
+    "items": [
+      {
+        "question": "¿Qué es RediShop?",
+        "answer": "RediShop es una app de ventas que conecta vendedores con productos de grandes marcas. El vendedor recibe su propia tienda, ofertas para sus clientes, comisión por venta y una IA que muestra qué vender, a quién y cuándo."
+      },
+      {
+        "question": "¿RediShop es solo otro programa de afiliados?",
+        "answer": "No. Además de vender productos y ganar comisión, recibes tu propia RediShop, organizas tus clientes y cuentas con una IA que encuentra oportunidades para vender todos los días."
+      },
+      {
+        "question": "¿Necesito ser influencer para vender en RediShop?",
+        "answer": "No. RediShop es para quien vende, recomienda productos o tiene relación con clientes."
+      },
+      {
+        "question": "¿Necesito pagar para usar RediShop o comprar algún kit?",
+        "answer": "No. RediShop es gratis para vendedores. No necesitas hacer ninguna inversión ni comprar productos para empezar."
+      },
+      {
+        "question": "¿Necesito comprar los productos antes de vender?",
+        "answer": "No. Eliges lo que quieres vender sin necesidad de comprar mercadería antes."
+      },
+      {
+        "question": "¿Por qué mi cliente compraría conmigo y no directo de la marca?",
+        "answer": "Porque en tu RediShop el cliente encuentra el producto al menos 5% más barato que en el e-commerce oficial de la marca."
+      },
+      {
+        "question": "¿Mi cliente paga a quién?",
+        "answer": "Directo a la marca, en el e-commerce oficial de ella."
+      },
+      {
+        "question": "¿Quién entrega el producto a mi cliente?",
+        "answer": "La propia marca se encarga del pedido y de la entrega."
+      },
+      {
+        "question": "¿Cómo se calcula mi comisión?",
+        "answer": "Redi sigue automáticamente todo lo que vendes por tu RediShop y calcula cuánto tienes que recibir."
+      },
+      {
+        "question": "¿Cómo llega el dinero a mí?",
+        "answer": "Registras tu cuenta bancaria en la app. Redi cobra la comisión a la marca y, en cuanto la recibe, te transfiere el valor."
+      },
+      {
+        "question": "¿Puedo elegir lo que quiero vender?",
+        "answer": "Sí. Tú eliges las marcas y los productos que quieres agregar a tu RediShop."
+      },
+      {
+        "question": "¿Los clientes que consiga siguen siendo míos?",
+        "answer": "Sí. Construyes tu propia cartera de clientes y sigues el historial de compras desde la app."
+      },
+      {
+        "question": "¿Dónde puedo vender?",
+        "answer": "Donde estén tus clientes: WhatsApp, Instagram, TikTok, lives, redes sociales o en persona."
+      },
+      {
+        "question": "¿Revisan mi situación crediticia para vender en RediShop?",
+        "answer": "Redi no consulta ni analiza tu situación crediticia. Para recibir tus comisiones, solo necesitas registrar una cuenta bancaria a tu nombre."
+      }
+    ],
+    "showAll": "Ver todas las preguntas"
+  },
+  "footer": {
+    "tagline": "Una red que conecta a las personas con las marcas y convierte recomendaciones en ventas.",
+    "columns": [
+      {
+        "title": "Para vendedores",
+        "items": ["Descargar la app"]
+      },
+      {
+        "title": "Para marcas",
+        "items": ["Conectar Shopify y VTEX", "Cómo funciona", "Hablar con el equipo"]
+      },
+      {
+        "title": "RediShop",
+        "items": ["Sobre nosotros", "Términos", "Privacidad"]
+      }
+    ],
+    "rights": "© RediShop. Una empresa del grupo RediRedi. Todos los derechos reservados."
+  },
+  "waitlist": {
+    "title": "Crea tu RediShop",
+    "subtitle": "Deja tus datos para recibir tu acceso a RediShop.",
+    "fields": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "(11) 99999-9999",
+      "countryCode": "DDI",
+      "profile": "¿Cómo vendes hoy?",
+      "profilePlaceholder": "Selecciona una opción"
+    },
+    "profiles": {
+      "reseller": "Soy revendedor(a)",
+      "affiliate": "Soy afiliado(a)",
+      "creator": "Soy creador(a)/influencer",
+      "not_yet": "Todavía no vendo, pero quiero empezar a vender"
+    },
+    "submit": "Quiero mi RediShop",
+    "sending": "Enviando...",
+    "close": "Cerrar",
+    "errors": {
+      "required": "Completa este campo.",
+      "email": "Escribe un correo válido.",
+      "phone": "Escribe un número válido.",
+      "profile": "Elige una opción.",
+      "generic": "No pudimos enviarlo ahora. Inténtalo de nuevo."
+    },
+    "success": {
+      "title": "Tu invitación está en camino.",
+      "text": "Estamos liberando los accesos poco a poco. Estate atento a tu correo — en unos días recibirás tu invitación para crear tu RediShop.",
+      "duplicate": "Ese correo ya está en la lista. ¡Todo listo!",
+      "after": "Mientras tanto, explora la app y ve cómo funciona.",
+      "cta": "Explorar RediShop →",
+      "note": "Demostración con datos de ejemplo. No se guardará ningún cambio."
+    }
+  },
+  "brands": {
+    "hero": {
+      "eyebrow": "PARA MARCAS",
+      "titleA": "Alcanza más de 1.5 millones de ",
+      "titleHighlight": "compradores potenciales.",
+      "description": "Conecta tu e-commerce a Redi y vende a través de vendedores, afiliados y creadores de contenido.",
+      "cta": "Quiero conocer Redi",
+      "checks": [
+        "Sin cambiar tu operación",
+        "Tú controlas comisiones y ofertas",
+        "Integración con Shopify y VTEX"
+      ]
+    },
+    "steps": {
+      "title": "Tu operación sigue igual. Tu distribución crece.",
+      "connect": {
+        "title": "1. Conecta tu e-commerce",
+        "description": "Productos, precios y stock siempre actualizados.",
+        "highlight": "Integración en menos de 1 minuto",
+        "shopify": "Instala la app de Redi en Shopify.",
+        "vtex": "Ingresa tu clave de integración en VTEX."
+      },
+      "conditions": {
+        "title": "2. Define las condiciones",
+        "description": "Elige comisiones, descuentos y productos disponibles.",
+        "items": [
+          {
+            "title": "Comisión para vendedores",
+            "description": "General, por categoría o por producto."
+          },
+          {
+            "title": "Descuentos para clientes",
+            "description": "Crea ofertas exclusivas para impulsar las ventas."
+          }
+        ]
+      },
+      "activate": {
+        "title": "3. Activa nuevos vendedores",
+        "description": "Redi ayuda a cada vendedor a encontrar oportunidades y generar ventas."
+      }
+    },
+    "contact": {
+      "title": "¿Quieres saber si Redi tiene sentido para tu marca?",
+      "description": "Habla con nuestro equipo y conoce más sobre:",
+      "items": [
+        "Perfil de los vendedores de la red",
+        "Segmentación de productos y campañas",
+        "Rastreo y atribución por last click",
+        "Split y pago automático de comisiones"
+      ],
+      "email": "Correo corporativo",
+      "submit": "Hablar con un especialista",
+      "sending": "Enviando...",
+      "success": "Recibimos tu contacto. Nuestro equipo te escribirá pronto.",
+      "errorEmail": "Escribe un correo válido.",
+      "errorGeneric": "No pudimos enviarlo ahora. Inténtalo de nuevo."
+    }
+  }
+}
