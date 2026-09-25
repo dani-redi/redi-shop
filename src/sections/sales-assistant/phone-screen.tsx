@@ -47,15 +47,15 @@ function BalanceRow({ label, value, large }: { label: string; value: string; lar
       )}
     >
       <div className="min-w-0">
-        <p className="text-[length:max(var(--mockup-text-min),1.4cqw)] leading-tight text-white/70">
+        <p className="text-[1.4cqw] leading-tight text-white/70">
           {label}
         </p>
         <p
           className={cn(
             'mt-[0.3cqw] leading-tight font-extrabold text-white',
             large
-              ? 'text-[length:max(var(--mockup-text-min),2.7cqw)]'
-              : 'text-[length:max(var(--mockup-text-min),2.2cqw)]',
+              ? 'text-[2.7cqw]'
+              : 'text-[2.2cqw]',
           )}
         >
           {value}
@@ -73,14 +73,13 @@ export function PhoneScreen() {
 
   return (
     <>
-      {/* Celular: sem notch, então o topo encolhe. */}
-      <div className="relative bg-[linear-gradient(160deg,#6D28D9_0%,#5B1FC4_60%,#4C169F_100%)] px-[2.4cqw] pt-[3cqw] pb-[2.6cqw] md:pt-[4.6cqw]">
+      <div className="relative bg-[linear-gradient(160deg,#6D28D9_0%,#5B1FC4_60%,#4C169F_100%)] px-[2.4cqw] pt-[4.6cqw] pb-[2.6cqw]">
         <div className="flex items-start justify-between gap-[1cqw]">
           <div className="min-w-0">
-            <p className="text-[length:max(var(--mockup-text-min),2.7cqw)] leading-tight font-extrabold text-white">
+            <p className="text-[2.7cqw] leading-tight font-extrabold text-white">
               {phone.greeting}
             </p>
-            <p className="mt-[0.4cqw] text-[length:max(var(--mockup-text-min),1.55cqw)] leading-tight text-white/70">
+            <p className="mt-[0.4cqw] text-[1.55cqw] leading-tight text-white/70">
               {phone.greetingSub}
             </p>
           </div>
@@ -96,12 +95,12 @@ export function PhoneScreen() {
         <BalanceRow label={phone.pending} value={phone.pendingValue} />
       </div>
 
-      <div className="px-[2.2cqw] pt-[2cqw] pb-[2.2cqw] md:pb-[1cqw]">
+      <div className="px-[2.2cqw] pt-[2cqw] pb-[1cqw]">
         <div className="flex items-center justify-between">
-          <p className="text-[length:max(var(--mockup-text-min),2cqw)] leading-none font-bold text-foreground">
+          <p className="text-[2cqw] leading-none font-bold text-foreground">
             {phone.guide}
           </p>
-          <p className="text-[length:max(var(--mockup-text-min),1.5cqw)] leading-none font-semibold text-brand">
+          <p className="text-[1.5cqw] leading-none font-semibold text-brand">
             {phone.seeAll}
           </p>
         </div>
@@ -123,17 +122,17 @@ export function PhoneScreen() {
                 <div className="min-w-0 flex-1">
                   <p
                     className={cn(
-                      'text-[length:max(var(--mockup-text-min),1.15cqw)] leading-none font-bold tracking-[0.08em] uppercase',
+                      'text-[1.15cqw] leading-none font-bold tracking-[0.08em] uppercase',
                       visual.tone,
                     )}
                   >
                     {opportunity.tag}
                   </p>
-                  <p className="mt-[0.5cqw] text-[length:max(var(--mockup-text-min),1.75cqw)] leading-tight font-semibold text-foreground">
+                  <p className="mt-[0.5cqw] text-[1.75cqw] leading-tight font-semibold text-foreground">
                     {opportunity.title}
                   </p>
                   {opportunity.description ? (
-                    <p className="mt-[0.3cqw] text-[length:max(var(--mockup-text-min),1.35cqw)] leading-tight text-muted-foreground">
+                    <p className="mt-[0.3cqw] text-[1.35cqw] leading-tight text-muted-foreground">
                       {opportunity.description}
                     </p>
                   ) : null}
@@ -154,7 +153,7 @@ export function PhoneScreen() {
                       <span
                         key={initial}
                         className={cn(
-                          'flex size-[2.9cqw] items-center justify-center rounded-full border border-white text-[length:max(var(--mockup-text-min),1.3cqw)] font-bold text-white',
+                          'flex size-[2.9cqw] items-center justify-center rounded-full border border-white text-[1.3cqw] font-bold text-white',
                           avatarColors[i],
                         )}
                       >
@@ -174,7 +173,7 @@ export function PhoneScreen() {
       </div>
 
       {/* Barra de navegação do app: decorativa, só com a moldura do celular (tablet em diante). */}
-      <div className="mt-[1cqw] hidden items-start justify-between border-t border-black/5 px-[2cqw] pt-[1.4cqw] pb-[3cqw] md:flex">
+      <div className="mt-[1cqw] flex items-start justify-between border-t border-black/5 px-[2cqw] pt-[1.4cqw] pb-[3cqw]">
         {phone.nav.map((label, index) => {
           const Icon = navIcons[index] ?? House
           const active = index === 0
@@ -188,7 +187,7 @@ export function PhoneScreen() {
               />
               <span
                 className={cn(
-                  'text-[length:max(var(--mockup-text-min),1.25cqw)] leading-none',
+                  'text-[1.25cqw] leading-none',
                   active ? 'font-bold text-brand' : 'text-muted-foreground/80',
                 )}
               >

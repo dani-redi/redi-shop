@@ -83,16 +83,12 @@
   --header-h: 3.5rem;
   --logo-h: 1.625rem;
   --logo-h-footer: 2.25rem;
-  /* Celular do "Venda por conta própria": no mobile a tela vira card em largura total. */
-  --phone-w: calc(100vw - 2 * var(--gutter));
+  /* Celular do "Venda por conta própria": no mobile, estreito para caber as anotações ao lado. */
+  --phone-w: 44vw;
 
-  /* "Do produto ao post": card do produto e palco dos 3 mockups (no celular, carrossel). */
-  --share-card-w: min(100vw - 2 * var(--gutter), 38rem);
-  /* Cada mockup ocupa 78% da largura útil: palco = 3 itens + 2 gaps de 3cqw (1 item = 31,33%). */
-  --tools-stage-w: calc((100vw - 2 * var(--gutter)) * 0.78 / 0.3133);
-
-  /* Texto mínimo dentro de mockups (medidos em cqw): 12px no mobile, livre no desktop. */
-  --mockup-text-min: 0.75rem;
+  /* "Do produto ao post": card do produto e palco dos 3 mockups (lado a lado, na largura útil). */
+  --share-card-w: min(66vw, 38rem);
+  --tools-stage-w: 100%;
 
   /* Tipografia: fixa no mobile, fluida de 768px até o valor de desktop em 1280px. */
   --fs-display: 2.125rem;
@@ -134,8 +130,7 @@
     --header-h: 4rem;
     --logo-h: 1.05rem; /* 60% de 1.75rem */
     --phone-w: clamp(15rem, 68vw, 21.25rem);
-    --tools-stage-w: 100%;
-    --mockup-text-min: 0px;
+    --share-card-w: min(100vw - 2 * var(--gutter), 38rem);
 
     --fs-display: clamp(2.75rem, 1.25rem + 3.125vw, 3.75rem);
     --fs-h2: clamp(2.125rem, 1.1875rem + 1.953vw, 2.75rem);
@@ -159,7 +154,7 @@
     --section-y: 7.5rem;
     --content-gap: 4rem;
     --header-h: 4.75rem;
-    --logo-h: 1.275rem; /* 60% de 2.125rem */
+    --logo-h: 1.65rem; /* 60% de 2.125rem + 6px */
     --tools-stage-w: min(60rem, 100%);
   }
 }

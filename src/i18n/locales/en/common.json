@@ -28,7 +28,6 @@
     "es": "Español"
   },
   "hero": {
-    "eyebrow": "YOUR SALES NETWORK",
     "titleA": "Recommend products",
     "titleB": "and earn commission",
     "titleM1": "Recommend products and earn",
@@ -143,10 +142,10 @@
       "nav": ["Home", "Products", "Clients", "Sales", "More"]
     },
     "notes": [
-      "Network opportunities",
-      "Your customers always close",
-      "Everything in one place",
-      "More sales every day"
+      "Network\nopportunities",
+      "Your customers\nalways\nclose",
+      "Everything in\none place",
+      "More sales\nevery day"
     ],
     "closing": "Network opportunities, brand offers and your customers. ",
     "closingHighlight": "Everything organized to help you sell more."
@@ -335,7 +334,7 @@
       "whatsappPlaceholder": "(11) 99999-9999",
       "countryCode": "DDI",
       "profile": "How do you sell today?",
-      "profilePlaceholder": "Select an option"
+      "profileHint": "Select all that apply."
     },
     "profiles": {
       "reseller": "I'm a reseller",
@@ -350,7 +349,7 @@
       "required": "Please fill in this field.",
       "email": "Enter a valid email.",
       "phone": "Enter a valid number.",
-      "profile": "Choose an option.",
+      "profile": "Choose at least one option.",
       "generic": "We couldn't send it right now. Please try again."
     },
     "success": {

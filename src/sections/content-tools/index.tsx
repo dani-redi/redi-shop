@@ -1,5 +1,5 @@
 import { MessageCircle } from 'lucide-react'
-import { useRef, useState, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import story from '@/assets/images/tools/story.webp'
 import tiktok from '@/assets/images/tools/tiktok.webp'
@@ -25,7 +25,7 @@ const mockupTilt = [
 
 function ChannelChip({ icon, label }: { icon: ReactNode; label: string }) {
   return (
-    <span className="flex items-center gap-2 rounded-full bg-background px-3 py-1.5 text-small font-semibold shadow-level-1">
+    <span className="flex items-center gap-1 rounded-full bg-background px-2 py-1 text-[0.625rem] font-semibold shadow-level-1 md:gap-2 md:px-3 md:py-1.5 md:text-small">
       {icon}
       {label}
     </span>
@@ -36,15 +36,13 @@ function ChannelChip({ icon, label }: { icon: ReactNode; label: string }) {
 export function ContentTools() {
   const { t } = useTranslation()
   const tools = t('contentTools')
-  const scroller = useRef<HTMLDivElement>(null)
-  const [page, setPage] = useState(0)
 
   const channels = [
     {
       label: tools.channels.whatsapp,
       icon: (
         <MessageCircle
-          className="size-4 text-[#25D366]"
+          className="size-3 text-[#25D366] md:size-4"
           strokeWidth={iconStroke}
           aria-hidden="true"
         />
@@ -63,10 +61,10 @@ export function ContentTools() {
       label: tools.channels.tiktok,
       icon: (
         <span
-          className="flex size-4 items-center justify-center rounded-xs bg-black"
+          className="flex size-3 items-center justify-center rounded-xs bg-black md:size-4"
           aria-hidden="true"
         >
-          <TikTokIcon className="size-3" />
+          <TikTokIcon className="size-2 md:size-3" />
         </span>
       ),
       post: (
@@ -81,7 +79,7 @@ export function ContentTools() {
     },
     {
       label: tools.channels.story,
-      icon: <InstagramIcon className="size-4 text-[#E0489C]" />,
+      icon: <InstagramIcon className="size-3 text-[#E0489C] md:size-4" />,
       post: (
         <StoryPost
           image={story}
@@ -95,20 +93,6 @@ export function ContentTools() {
       ),
     },
   ]
-
-  // Indicador de paginação do carrossel (só no celular).
-  const updatePage = () => {
-    const element = scroller.current
-    if (!element) return
-    const max = element.scrollWidth - element.clientWidth
-    setPage(max > 0 ? Math.round((element.scrollLeft / max) * (channels.length - 1)) : 0)
-  }
-  const goTo = (index: number) => {
-    const element = scroller.current
-    if (!element) return
-    const max = element.scrollWidth - element.clientWidth
-    element.scrollTo({ left: (max * index) / (channels.length - 1), behavior: 'smooth' })
-  }
 
   return (
     <section
@@ -140,51 +124,25 @@ export function ContentTools() {
         </Reveal>
 
         <Reveal className="mt-content">
-          <div
-            ref={scroller}
-            onScroll={updatePage}
-            className="-mx-gutter snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto px-gutter md:mx-0 md:overflow-visible md:px-0"
-          >
-            <div className="container-inline mx-auto w-(--tools-stage-w)">
-              <div className="grid grid-cols-3 gap-[3cqw] pt-2 pb-4 md:pb-[3cqw]">
-                {channels.map((channel, index) => (
-                  <div
-                    key={channel.label}
-                    className="flex snap-center flex-col items-center gap-2 md:gap-4"
-                  >
-                    <ChannelChip icon={channel.icon} label={channel.label} />
-                    <div className={cn('w-full', mockupTilt[index])}>{channel.post}</div>
-                  </div>
-                ))}
-              </div>
+          <div className="container-inline mx-auto w-(--tools-stage-w)">
+            <div className="grid grid-cols-3 gap-[3cqw] pt-2 pb-4 md:pb-[3cqw]">
+              {channels.map((channel, index) => (
+                <div key={channel.label} className="flex flex-col items-center gap-2 md:gap-4">
+                  <ChannelChip icon={channel.icon} label={channel.label} />
+                  <div className={cn('w-full', mockupTilt[index])}>{channel.post}</div>
+                </div>
+              ))}
             </div>
-          </div>
-          <div className="flex justify-center md:hidden">
-            {channels.map((channel, index) => (
-              <button
-                key={channel.label}
-                type="button"
-                aria-label={channel.label}
-                aria-current={page === index}
-                onClick={() => goTo(index)}
-                className="flex size-11 cursor-pointer items-center justify-center"
-              >
-                <span
-                  className={cn(
-                    'h-2 rounded-full transition-[width,background-color] duration-200',
-                    page === index ? 'w-6 bg-brand' : 'w-2 bg-brand/25',
-                  )}
-                />
-              </button>
-            ))}
           </div>
         </Reveal>
 
-        {/* Anotação manuscrita: só do tablet em diante. */}
-        <div className="mt-8 hidden items-center justify-center gap-4 md:flex">
-          <HandArrow shape="swoop" className="w-12 shrink-0 -scale-x-100" />
-          <HandwrittenNote className="max-w-xs text-center">{tools.noteShare}</HandwrittenNote>
-          <HandArrow shape="swoop" className="w-12 shrink-0" />
+        {/* Anotação manuscrita. No celular, as setas apontam para os posts das pontas. */}
+        <div className="mt-4 flex items-center justify-center gap-6 md:mt-8 md:gap-4">
+          <HandArrow shape="swoop" className="w-9 shrink-0 md:w-12 md:-scale-x-100" />
+          <HandwrittenNote className="max-w-44 text-center text-[0.8125rem]/tight md:max-w-xs md:text-note">
+            {tools.noteShare}
+          </HandwrittenNote>
+          <HandArrow shape="swoop" className="w-9 shrink-0 -scale-x-100 md:w-12 md:scale-x-100" />
         </div>
       </Container>
     </section>

@@ -1,4 +1,4 @@
-import { LayoutGrid, Sparkles, TrendingUp, Users, type LucideIcon } from 'lucide-react'
+import { Users } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Container } from '@/components/container'
 import { HandArrow, HandwrittenNote } from '@/components/handwritten-note'
@@ -12,17 +12,34 @@ import { PhoneScreen } from './phone-screen'
 /*
  * Palco do celular: um container-inline com largura = moldura ÷ 0,445, então 1cqw acompanha
  * o celular (--phone-w) e a tela interna mantém a proporção em qualquer largura.
- * Anotações simétricas, duas de cada lado, na mesma altura (ordem de `salesAssistant.notes`).
+ * Anotações, duas de cada lado (ordem de `salesAssistant.notes`). No celular ficam
+ * desencontradas e quebram nos `
+` das traduções; do tablet em diante, simétricas, na mesma
+ * altura e com quebra natural. `mobileArrow: false` esconde a seta só no celular.
  */
 const notePlacements = [
-  { side: 'left', top: 'top-[24cqw]' },
-  { side: 'left', top: 'top-[58cqw]' },
-  { side: 'right', top: 'top-[24cqw]' },
-  { side: 'right', top: 'top-[58cqw]' },
+  { side: 'left', className: 'top-[22cqw] md:top-[24cqw]', mobileArrow: true },
+  { side: 'left', className: 'top-[46cqw] md:top-[58cqw]', mobileArrow: true },
+  { side: 'right', className: 'top-[29cqw] md:top-[24cqw]', mobileArrow: true },
+  { side: 'right', className: 'top-[64cqw] md:top-[58cqw]', mobileArrow: false },
 ] as const
 
-/** Ícones dos chips que substituem as anotações no celular (mesma ordem de `notes`). */
-const noteIcons: LucideIcon[] = [Sparkles, Users, LayoutGrid, TrendingUp]
+/** Tracinhos de "brilho" saindo do canto do celular, só no mobile. O canto fica em (24, 24). */
+function Sparks({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      aria-hidden="true"
+      className={cn('pointer-events-none text-brand md:hidden', className)}
+    >
+      <path d="M2 15l9 3M5 4l8 8M15 1l2 9" />
+    </svg>
+  )
+}
 
 /** "Venda por conta própria. Não sozinho." — celular com o guia do dia e anotações. */
 export function SalesAssistant() {
@@ -49,9 +66,11 @@ export function SalesAssistant() {
         <Reveal className="mt-content">
           <div className="container-inline relative left-1/2 w-[calc(var(--phone-w)/0.445)] -translate-x-1/2">
             <div
-              className="absolute top-[10cqw] left-1/2 hidden aspect-square w-[80cqw] -translate-x-1/2 device-glow md:block"
+              className="absolute top-[10cqw] left-1/2 aspect-square w-[80cqw] -translate-x-1/2 device-glow"
               aria-hidden="true"
             />
+            <Sparks className="absolute -top-[5cqw] right-[calc(50%+19cqw)] w-[8cqw]" />
+            <Sparks className="absolute -bottom-[5cqw] left-[calc(50%+19cqw)] w-[8cqw] rotate-180" />
             <PhoneMockup>
               <PhoneScreen />
             </PhoneMockup>
@@ -62,40 +81,33 @@ export function SalesAssistant() {
                 <div
                   key={note}
                   className={cn(
-                    'absolute hidden w-[22cqw] flex-col md:flex',
-                    placement.top,
+                    'absolute flex w-max flex-col text-center md:w-[22cqw]',
+                    placement.className,
                     left
-                      ? 'right-[calc(50%+27cqw)] items-end text-right'
-                      : 'left-[calc(50%+27cqw)] items-start text-left',
+                      ? 'right-[calc(50%+25cqw)] items-end md:right-[calc(50%+27cqw)] md:text-right'
+                      : 'left-[calc(50%+25cqw)] items-start md:left-[calc(50%+27cqw)] md:text-left',
                   )}
                 >
-                  <HandwrittenNote>{note}</HandwrittenNote>
-                  <HandArrow className={cn('mt-2 w-[7cqw]', !left && '-scale-x-100')} />
+                  <HandwrittenNote className="self-stretch text-[3.3cqw]/[1.2] whitespace-pre-line md:text-note md:whitespace-normal">
+                    {note}
+                  </HandwrittenNote>
+                  {/* Celular: seta sai do meio do texto, desce e vira para o celular. */}
+                  <HandArrow
+                    shape="hook"
+                    className={cn(
+                      'mt-[1cqw] w-[9.5cqw] self-center md:hidden',
+                      left ? 'translate-x-1/2' : '-translate-x-1/2 -scale-x-100',
+                      !placement.mobileArrow && 'hidden',
+                    )}
+                  />
+                  <HandArrow
+                    className={cn('mt-2 hidden w-[7cqw] md:block', !left && '-scale-x-100')}
+                  />
                 </div>
               )
             })}
           </div>
         </Reveal>
-
-        {/* Celular: as anotações manuscritas e setas saem; viram uma lista curta com ícones (2x2). */}
-        <ul className="mt-4 grid grid-cols-2 gap-2 md:hidden">
-          {notes.map((note, index) => {
-            const Icon = noteIcons[index] ?? Sparkles
-            return (
-              <li
-                key={note}
-                className="flex items-start gap-2 rounded-card bg-background px-3 py-2.5 text-small leading-tight font-semibold text-foreground shadow-level-1"
-              >
-                <Icon
-                  className="size-4 shrink-0 text-brand"
-                  strokeWidth={iconStroke}
-                  aria-hidden="true"
-                />
-                {note}
-              </li>
-            )
-          })}
-        </ul>
 
         <Reveal className="mx-auto mt-content flex max-w-reading items-start gap-4 rounded-panel bg-brand-lilac p-5 md:p-8">
           <Users
@@ -103,7 +115,7 @@ export function SalesAssistant() {
             strokeWidth={iconStroke}
             aria-hidden="true"
           />
-          <p className="text-lead text-foreground">
+          <p className="text-body font-semibold text-foreground md:text-lead md:font-normal">
             {t('salesAssistant.closing')}
             <span className="font-semibold text-brand">{t('salesAssistant.closingHighlight')}</span>
           </p>

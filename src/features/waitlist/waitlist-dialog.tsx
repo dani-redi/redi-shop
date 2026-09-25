@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ChevronDown, LoaderCircle } from 'lucide-react'
+import { ArrowRight, Check, LoaderCircle } from 'lucide-react'
 import { useState, type FormEvent, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/button'
@@ -34,8 +34,16 @@ export function WaitlistDialog({ open, onOpenChange }: WaitlistDialogProps) {
   const [email, setEmail] = useState('')
   const [countryCode, setCountryCode] = useState<string>(countryCodes[0].code)
   const [phone, setPhone] = useState('')
-  // Sem opção pré-selecionada: '' mostra o texto inicial do dropdown.
-  const [profile, setProfile] = useState<SellerProfile | ''>('')
+  const [profiles, setProfiles] = useState<SellerProfile[]>([])
+
+  // Múltipla escolha; "Ainda não vendo" exclui as demais (e vice-versa).
+  const toggleProfile = (option: SellerProfile) => {
+    setProfiles((current) => {
+      if (current.includes(option)) return current.filter((item) => item !== option)
+      if (option === 'not_yet') return [option]
+      return [...current.filter((item) => item !== 'not_yet'), option]
+    })
+  }
 
   const handleOpenChange = (next: boolean) => {
     onOpenChange(next)
@@ -46,7 +54,7 @@ export function WaitlistDialog({ open, onOpenChange }: WaitlistDialogProps) {
         setDuplicate(false)
         setSubmitError(null)
         setErrors({})
-        setProfile('')
+        setProfiles([])
       }, 250)
     }
   }
@@ -56,7 +64,7 @@ export function WaitlistDialog({ open, onOpenChange }: WaitlistDialogProps) {
     if (name.trim().length < 2) next.name = t('waitlist.errors.required')
     if (!emailPattern.test(email.trim())) next.email = t('waitlist.errors.email')
     if (phone.replace(/\D/g, '').length < 8) next.phone = t('waitlist.errors.phone')
-    if (!profile) next.profile = t('waitlist.errors.profile')
+    if (profiles.length === 0) next.profile = t('waitlist.errors.profile')
     return next
   }
 
@@ -73,8 +81,7 @@ export function WaitlistDialog({ open, onOpenChange }: WaitlistDialogProps) {
         name: name.trim(),
         email: email.trim(),
         whatsapp: `${countryCode} ${phone.trim()}`,
-        // O contrato da API continua com uma lista; o formulário agora escolhe um perfil.
-        sellerProfiles: profile ? [profile] : [],
+        sellerProfiles: profiles,
         locale: i18n.language,
         ...collectAttribution(),
       })
@@ -189,34 +196,51 @@ export function WaitlistDialog({ open, onOpenChange }: WaitlistDialogProps) {
                 </div>
               </Field>
 
-              <Field label={t('waitlist.fields.profile')} error={errors.profile}>
-                <div className="relative">
-                  <select
-                    name="seller-profile"
-                    value={profile}
-                    onChange={(e) => setProfile(e.target.value as SellerProfile)}
-                    aria-invalid={Boolean(errors.profile)}
-                    className={cn(
-                      inputClass,
-                      'appearance-none pr-11',
-                      profile ? 'text-foreground' : 'text-muted-foreground/70',
-                    )}
-                  >
-                    <option value="" disabled>
-                      {t('waitlist.fields.profilePlaceholder')}
-                    </option>
-                    {sellerProfiles.map((option) => (
-                      <option key={option} value={option} className="text-foreground">
+              <fieldset aria-describedby="seller-profile-hint">
+                <legend className="text-sm font-bold text-foreground">
+                  {t('waitlist.fields.profile')}
+                </legend>
+                <p id="seller-profile-hint" className="mt-0.5 text-xs text-muted-foreground">
+                  {t('waitlist.fields.profileHint')}
+                </p>
+                <div className="mt-2.5 flex flex-wrap gap-2">
+                  {sellerProfiles.map((option) => {
+                    const checked = profiles.includes(option)
+                    return (
+                      <label
+                        key={option}
+                        className={cn(
+                          'flex min-h-11 cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors select-none has-focus-visible:ring-2 has-focus-visible:ring-brand/30',
+                          checked
+                            ? 'border-brand bg-brand-tint text-brand'
+                            : 'border-border bg-background text-foreground hover:border-brand/40',
+                          errors.profile && !checked && 'border-destructive/50',
+                        )}
+                      >
+                        <input
+                          type="checkbox"
+                          name="seller-profiles"
+                          value={option}
+                          checked={checked}
+                          onChange={() => toggleProfile(option)}
+                          className="sr-only"
+                        />
+                        <span
+                          aria-hidden="true"
+                          className={cn(
+                            'flex size-4.5 shrink-0 items-center justify-center rounded-md border transition-colors',
+                            checked ? 'border-brand bg-brand text-white' : 'border-border',
+                          )}
+                        >
+                          {checked ? <Check className="size-3" strokeWidth={3} /> : null}
+                        </span>
                         {t(`waitlist.profiles.${option}`)}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown
-                    className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-muted-foreground"
-                    aria-hidden="true"
-                  />
+                      </label>
+                    )
+                  })}
                 </div>
-              </Field>
+                {errors.profile ? <FieldError>{errors.profile}</FieldError> : null}
+              </fieldset>
             </div>
 
             {submitError ? (

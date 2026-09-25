@@ -28,7 +28,6 @@
     "es": "Español"
   },
   "hero": {
-    "eyebrow": "TU RED DE VENTAS",
     "titleA": "Recomienda productos",
     "titleB": "y gana comisión",
     "titleM1": "Recomienda productos y gana",
@@ -143,10 +142,10 @@
       "nav": ["Inicio", "Productos", "Clientes", "Ventas", "Más"]
     },
     "notes": [
-      "Oportunidades de la red",
-      "Tus clientes siempre cerca",
-      "Todo en un solo lugar",
-      "Más ventas todos los días"
+      "Oportunidades\nde la red",
+      "Tus clientes\nsiempre\ncerca",
+      "Todo en un\nsolo lugar",
+      "Más ventas\ntodos los días"
     ],
     "closing": "Oportunidades de la red, ofertas de las marcas y tus clientes. ",
     "closingHighlight": "Todo organizado para ayudarte a vender más."
@@ -335,7 +334,7 @@
       "whatsappPlaceholder": "(11) 99999-9999",
       "countryCode": "DDI",
       "profile": "¿Cómo vendes hoy?",
-      "profilePlaceholder": "Selecciona una opción"
+      "profileHint": "Marca todas las que correspondan."
     },
     "profiles": {
       "reseller": "Soy revendedor(a)",
@@ -350,7 +349,7 @@
       "required": "Completa este campo.",
       "email": "Escribe un correo válido.",
       "phone": "Escribe un número válido.",
-      "profile": "Elige una opción.",
+      "profile": "Elige al menos una opción.",
       "generic": "No pudimos enviarlo ahora. Inténtalo de nuevo."
     },
     "success": {

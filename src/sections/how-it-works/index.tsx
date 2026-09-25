@@ -86,12 +86,12 @@ export function HowItWorks() {
         <Reveal className="mt-content grid gap-4 rounded-panel bg-brand-tint p-5 md:gap-6 md:p-8 lg:grid-cols-[2fr_3fr] lg:gap-x-10 lg:p-10">
           <div className="lg:col-start-1 lg:row-start-1">
             <Eyebrow variant="plain">{network.eyebrow}</Eyebrow>
-            <h3 className="mt-2 text-h3 md:mt-3">
+            <h3 className="mt-2 text-h3 font-bold md:mt-3 md:font-semibold">
               {network.titleA}
               <span className="text-brand">{network.titleHighlight}</span>
             </h3>
           </div>
-          <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
             {network.items.map((item, index) => {
               const visual = networkItemVisuals[index] ?? networkItemVisuals[0]
               return (
@@ -106,14 +106,16 @@ export function HowItWorks() {
               )
             })}
           </div>
-          <div className="flex items-start gap-4 border-t border-brand/15 pt-5 md:pt-6 lg:col-start-1 lg:row-start-2 lg:self-end">
+          <div className="flex items-center gap-4 border-t border-brand/15 pt-5 md:items-start md:pt-6 lg:col-start-1 lg:row-start-2 lg:self-end">
             <Users
-              className="size-10 shrink-0 text-brand"
+              className="size-8 shrink-0 text-brand md:size-10"
               strokeWidth={iconStroke}
               aria-hidden="true"
             />
-            <p className="text-small text-muted-foreground">
-              <strong className="block text-body font-semibold text-brand">
+            {/* Divisória entre ícone e texto, só no celular. */}
+            <span className="h-10 w-px shrink-0 bg-brand/20 md:hidden" aria-hidden="true" />
+            <p className="text-caption text-muted-foreground md:text-small">
+              <strong className="block text-small font-bold text-brand md:text-body md:font-semibold">
                 {network.closingA}
               </strong>
               {network.closingB}

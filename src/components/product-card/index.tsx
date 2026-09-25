@@ -19,7 +19,7 @@ export type ProductCardProps = {
 
 /**
  * Card de produto flutuante da hero: foto sobre fundo lilás, marca, nome e comissão.
- * Só aparece do tablet em diante; `loading="lazy"` evita baixar a foto no celular.
+ * Fica atrás do card central; `loading="lazy"` evita disputar banda com o título (LCP).
  */
 export function ProductCard({
   image,

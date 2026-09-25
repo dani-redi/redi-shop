@@ -30,22 +30,22 @@ export function WhatsAppPost({
   return (
     <div className={cn(frame, 'flex flex-col justify-between bg-[#ECE5DD] p-[1.8cqw]', className)}>
       <div className="rounded-[2cqw] rounded-tl-[0.6cqw] bg-white p-[1.5cqw] shadow-[0_1cqw_2.5cqw_-1.5cqw_rgba(24,10,60,0.28)]">
-        <p className="text-[length:max(var(--mockup-text-min),1.85cqw)] leading-snug font-medium">
+        <p className="text-[1.85cqw] leading-snug font-medium">
           {messageBefore}
         </p>
         <div className="mt-[1.2cqw] rounded-[1.4cqw] border border-black/5 bg-[#F7F6F4] p-[0.9cqw]">
           {attachment}
         </div>
-        <p className="mt-[1.2cqw] text-[length:max(var(--mockup-text-min),1.85cqw)] leading-snug font-medium">
+        <p className="mt-[1.2cqw] text-[1.85cqw] leading-snug font-medium">
           {messageAfter}
         </p>
-        <p className="mt-[0.6cqw] text-right text-[length:max(var(--mockup-text-min),1.4cqw)] text-muted-foreground">
+        <p className="mt-[0.6cqw] text-right text-[1.4cqw] text-muted-foreground">
           {time}
         </p>
       </div>
       <div className="mt-[1.8cqw] flex items-center gap-[1.2cqw] rounded-full bg-white px-[1.6cqw] py-[1.2cqw]">
         <Smile className="size-[2.2cqw] text-muted-foreground" aria-hidden="true" />
-        <span className="flex-1 truncate text-[length:max(var(--mockup-text-min),1.7cqw)] text-muted-foreground">
+        <span className="flex-1 truncate text-[1.7cqw] text-muted-foreground">
           {inputPlaceholder}
         </span>
         <span className="flex size-[3.6cqw] items-center justify-center rounded-full bg-[#25D366]">
@@ -96,10 +96,10 @@ export function TikTokPost({
         {productTag}
         <div className="flex items-end justify-between gap-[1.5cqw]">
           <div className="min-w-0 text-white">
-            <p className="text-[length:max(var(--mockup-text-min),1.8cqw)] leading-snug font-medium">
+            <p className="text-[1.8cqw] leading-snug font-medium">
               {caption}
             </p>
-            <p className="mt-[0.6cqw] text-[length:max(var(--mockup-text-min),1.7cqw)] leading-snug font-semibold">
+            <p className="mt-[0.6cqw] text-[1.7cqw] leading-snug font-semibold">
               {tags}
             </p>
           </div>
@@ -107,7 +107,7 @@ export function TikTokPost({
             {statItems.map(({ icon: Icon, value, filled }) => (
               <span key={value} className="flex flex-col items-center">
                 <Icon className={cn('size-[2.6cqw]', filled && 'fill-white')} aria-hidden="true" />
-                <span className="text-[length:max(var(--mockup-text-min),1.4cqw)] font-semibold">
+                <span className="text-[1.4cqw] font-semibold">
                   {value}
                 </span>
               </span>
@@ -158,10 +158,10 @@ export function StoryPost({
           <span className="flex size-[3.2cqw] shrink-0 items-center justify-center rounded-full bg-white/25">
             <Store className="size-[1.8cqw]" aria-hidden="true" />
           </span>
-          <span className="truncate text-[length:max(var(--mockup-text-min),1.8cqw)] font-semibold">
+          <span className="truncate text-[1.8cqw] font-semibold">
             {handle}
           </span>
-          <span className="text-[length:max(var(--mockup-text-min),1.6cqw)] opacity-80">
+          <span className="text-[1.6cqw] opacity-80">
             {time}
           </span>
           <span className="ml-auto flex items-center gap-[1.2cqw]">
@@ -169,7 +169,7 @@ export function StoryPost({
             <X className="size-[2.4cqw]" aria-hidden="true" />
           </span>
         </div>
-        <p className="mt-[3cqw] text-[length:max(var(--mockup-text-min),3.4cqw)] leading-[1.12] font-extrabold text-white drop-shadow-[0_0.5cqw_1.5cqw_rgba(0,0,0,0.4)]">
+        <p className="mt-[3cqw] text-[3.4cqw] leading-[1.12] font-extrabold text-white drop-shadow-[0_0.5cqw_1.5cqw_rgba(0,0,0,0.4)]">
           {title}
         </p>
         <div className="relative mt-auto flex justify-center">
@@ -183,11 +183,11 @@ export function StoryPost({
             height={480}
             className="w-[24cqw] object-contain drop-shadow-[0_2cqw_3cqw_rgba(0,0,0,0.5)]"
           />
-          <span className="absolute top-[1.5cqw] right-[0.5cqw] rounded-full bg-brand-tint px-[1.4cqw] py-[0.5cqw] text-[length:max(var(--mockup-text-min),1.5cqw)] font-bold text-brand shadow-soft">
+          <span className="absolute top-[1.5cqw] right-[0.5cqw] rounded-full bg-brand-tint px-[1.4cqw] py-[0.5cqw] text-[1.5cqw] font-bold text-brand shadow-soft">
             {tag}
           </span>
         </div>
-        <span className="mt-[2cqw] flex items-center justify-center gap-[1.2cqw] rounded-full bg-white px-[1.6cqw] py-[1.5cqw] text-[length:max(var(--mockup-text-min),1.9cqw)] font-extrabold tracking-[0.06em] text-foreground uppercase shadow-soft">
+        <span className="mt-[2cqw] flex items-center justify-center gap-[1.2cqw] rounded-full bg-white px-[1.6cqw] py-[1.5cqw] text-[1.9cqw] font-extrabold tracking-[0.06em] text-foreground uppercase shadow-soft">
           <Link2 className="size-[2cqw] text-brand" aria-hidden="true" />
           {cta}
         </span>

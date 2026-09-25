@@ -18,7 +18,7 @@ function withStoreHighlight(text: string) {
   return (
     <>
       {text.replace(storeDomain, '')}
-      <span className="font-bold text-brand">{match[0]}</span>
+      <span className="block font-bold text-brand md:inline">{match[0]}</span>
     </>
   )
 }
@@ -54,19 +54,19 @@ export function Hero() {
             size="xl"
             onClick={open}
             {...stickyCtaHide}
-            className="mt-6 w-full md:mt-8 md:w-auto"
+            className="mt-6 md:mt-8"
           >
             <ArrowLabel>{t('signupCta.button')}</ArrowLabel>
           </Button>
         </div>
 
         {/*
-         * Ilustração: o conteúdo dos cards repete o que o texto já diz. No celular, só o card
-         * central (Feed de Vendas) no fluxo; do tablet em diante, o palco com os 3 cards.
+         * Ilustração: o conteúdo dos cards repete o que o texto já diz. Palco com os 3 cards:
+         * compacto e sem rotação no celular; do tablet em diante, maior e com os laterais girados.
          */}
         <div
           aria-hidden="true"
-          className="relative mx-auto mt-content w-[88%] max-w-80 md:h-100 md:w-full md:max-w-3xl md:animate-hero-enter md:[animation-delay:120ms] lg:h-116"
+          className="relative mx-auto mt-content h-[12.5rem] w-full max-w-[22rem] md:h-100 md:w-full md:max-w-3xl md:animate-hero-enter md:[animation-delay:120ms] lg:h-116"
         >
           {products.map((product, index) => {
             const visual = heroProducts[index] ?? heroProducts[0]
@@ -95,7 +95,7 @@ export function Hero() {
           })}
         </div>
 
-        <ul className="mx-auto mt-6 grid max-w-sm gap-3 md:mt-12 md:max-w-4xl md:animate-hero-enter md:grid-cols-3 md:gap-0 md:divide-x md:divide-hero-ink/15 md:[animation-delay:240ms] lg:mt-16">
+        <ul className="mx-auto mt-8 grid max-w-4xl grid-cols-3 divide-x divide-hero-ink/15 md:mt-12 md:animate-hero-enter md:[animation-delay:240ms] lg:mt-16">
           {benefits.map(({ title, detail }, index) => (
             <li key={title}>
               <FeatureItem

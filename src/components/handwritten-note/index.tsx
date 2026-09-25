@@ -16,6 +16,8 @@ const arrowPaths = {
   curve: 'M4 6c14 2 30 10 38 30',
   /** Curva longa e aberta, para setas entre textos e imagens. */
   swoop: 'M4 34C14 14 30 6 48 8',
+  /** Desce e vira para a direita. */
+  hook: 'M8 4c-1 18 12 31 36 32',
 } as const
 
 type HandArrowProps = {
@@ -28,7 +30,11 @@ type HandArrowProps = {
  * espelhe com `-scale-x-100` / `-scale-y-100`. Puramente decorativa.
  */
 export function HandArrow({ shape = 'curve', className }: HandArrowProps) {
-  const heads = { curve: 'M35 30.5l7 5.5 1.3-9', swoop: 'M41.5 3.5L48 8l-7.5 3.5' }
+  const heads = {
+    curve: 'M35 30.5l7 5.5 1.3-9',
+    swoop: 'M41.5 3.5L48 8l-7.5 3.5',
+    hook: 'M37.5 30.5L44 36l-7 4',
+  }
   return (
     <svg
       viewBox="0 0 52 42"

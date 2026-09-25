@@ -36,10 +36,7 @@ export function Header({ variant = 'solid' }: { variant?: HeaderVariant }) {
     >
       <Container className="flex h-header items-center justify-between gap-4">
         {/* min-h-12: área de toque de 48px para a logo. */}
-        <Logo
-          tagline={variant === 'hero' ? t('hero.eyebrow') : undefined}
-          className="min-h-12 justify-center"
-        />
+        <Logo className="min-h-12 justify-center" />
         <DesktopNav />
         <div className="flex items-center gap-3">
           <LanguageSwitcher className="hidden lg:inline-flex" />

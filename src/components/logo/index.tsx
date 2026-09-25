@@ -18,13 +18,11 @@ const imageSizes = {
 
 type LogoProps = {
   size?: keyof typeof heights
-  /** Linha em caixa alta abaixo da marca ("SUA REDE DE VENDAS"). Oculta no mobile. */
-  tagline?: string
   className?: string
 }
 
 /** Marca "Redi" + ".shop", linkando para a home do idioma atual. */
-export function Logo({ size = 'header', tagline, className }: LogoProps) {
+export function Logo({ size = 'header', className }: LogoProps) {
   const { t } = useTranslation()
   const { homePath } = useLocale()
   return (
@@ -48,11 +46,6 @@ export function Logo({ size = 'header', tagline, className }: LogoProps) {
           .shop
         </span>
       </span>
-      {tagline ? (
-        <span className="mt-1 hidden text-eyebrow tracking-[0.24em] text-hero-ink/75 uppercase lg:block">
-          {tagline}
-        </span>
-      ) : null}
     </Link>
   )
 }

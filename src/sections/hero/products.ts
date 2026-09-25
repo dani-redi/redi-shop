@@ -20,23 +20,24 @@ type HeroProductVisual = {
 /** Visual dos 3 produtos, na mesma ordem de `hero.products` nas traduções. */
 export const heroProducts: HeroProductVisual[] = [
   {
-    // Laterais (só do tablet em diante): menores, girados ±4° e flutuando atrás do card central.
+    // Laterais: menores e flutuando atrás do card central; do tablet em diante, girados ±4°.
     image: serum,
     icon: Flame,
     tone: 'hot',
     cardClassName:
-      'absolute hidden bottom-4 left-0 z-10 h-[17.25rem] w-[31%] -rotate-4 animate-float md:flex lg:left-[3%] lg:h-[18.5rem] lg:w-[29%]',
+      'absolute bottom-0 left-0 z-10 h-[11rem] w-[37%] animate-float md:bottom-4 md:h-[17.25rem] md:w-[31%] md:-rotate-4 lg:left-[3%] lg:h-[18.5rem] lg:w-[29%]',
     imageClassName: 'z-10 -top-[9%] h-[112%] w-[120%] lg:-top-[10%] lg:h-[114%]',
   },
   {
-    // O produto do meio aparece dentro do FeedCard, não como ProductCard. No celular fica no
-    // fluxo, em largura total do palco; no desktop, protagonista 10–20% maior.
+    // O produto do meio aparece dentro do FeedCard, não como ProductCard. No celular é
+    // desenhado no tamanho do tablet e reduzido pela metade (scale); no desktop, protagonista
+    // 10–20% maior.
     image: cleanser,
     imageSmall: cleanserSmall,
     icon: Sparkles,
     tone: 'purple',
     cardClassName:
-      'relative z-30 md:absolute md:top-0 md:left-1/2 md:h-[22rem] md:w-[37%] md:origin-top md:-translate-x-1/2 md:scale-110 lg:h-[24rem] lg:w-[34%] lg:scale-120',
+      'absolute bottom-0 left-1/2 z-30 h-[24rem] w-[16rem] origin-bottom -translate-x-1/2 scale-50 md:top-0 md:bottom-auto md:h-[22rem] md:w-[37%] md:origin-top md:scale-110 lg:h-[24rem] lg:w-[34%] lg:scale-120',
     imageClassName: '',
   },
   {
@@ -44,7 +45,7 @@ export const heroProducts: HeroProductVisual[] = [
     icon: Zap,
     tone: 'purple',
     cardClassName:
-      'absolute hidden right-0 bottom-4 z-20 h-[17.25rem] w-[31%] rotate-4 animate-float [animation-delay:-3s] md:flex lg:right-[3%] lg:h-[18.5rem] lg:w-[29%]',
+      'absolute right-0 bottom-0 z-20 h-[11rem] w-[37%] animate-float [animation-delay:-3s] md:bottom-4 md:h-[17.25rem] md:w-[31%] md:rotate-4 lg:right-[3%] lg:h-[18.5rem] lg:w-[29%]',
     imageClassName: 'z-30 bottom-[-30%] h-[130%] w-[138%] lg:bottom-[-34%] lg:h-[136%] lg:w-[144%]',
   },
 ]
