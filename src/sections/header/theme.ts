@@ -13,13 +13,13 @@ export const headerTheme = {
     top: 'border-transparent',
     scrolled: surface,
     menuButton: 'border-hero-ink/25 text-hero-ink',
-    mobilePanel: 'border-t border-hero-ink/10 bg-background text-hero-ink',
+    mobilePanel: 'bg-background text-hero-ink',
   },
   solid: {
     header: 'sticky top-0 z-50 text-foreground',
     top: surface,
     scrolled: surface,
     menuButton: 'border-brand/25 text-brand',
-    mobilePanel: 'border-t border-border/60 bg-background text-foreground',
+    mobilePanel: 'bg-background text-foreground',
   },
 } satisfies Record<HeaderVariant, Record<string, string>>

@@ -32,11 +32,16 @@ export function Header({ variant = 'solid' }: { variant?: HeaderVariant }) {
         'border-b transition-[background-color,border-color,backdrop-filter] duration-200',
         theme.header,
         scrolled || open ? theme.scrolled : theme.top,
+        // Menu aberto: header mais alto (a altura do Container e o topo do card acompanham).
+        open && 'max-lg:[--header-h:4.5rem]',
       )}
     >
       <Container className="flex h-header items-center justify-between gap-4">
         {/* min-h-12: área de toque de 48px para a logo. */}
-        <Logo className="min-h-12 justify-center" />
+        <Logo
+          tagline={variant === 'hero' ? t('hero.eyebrow') : undefined}
+          className="min-h-12 justify-center"
+        />
         <DesktopNav />
         <div className="flex items-center gap-3">
           <LanguageSwitcher className="hidden lg:inline-flex" />
