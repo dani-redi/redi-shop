@@ -62,7 +62,7 @@ export function FeatureItem({
       </span>
       <div className="min-w-0">
         <p className="text-small font-bold md:text-body md:font-semibold">{title}</p>
-        <p className="mt-0.5 text-[0.6875rem] leading-snug text-hero-ink/70 md:text-small">
+        <p className="mt-0.5 text-[0.58rem] leading-tight text-hero-ink/70 md:text-small md:leading-snug">
           {description}
         </p>
       </div>
