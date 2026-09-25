@@ -9,7 +9,7 @@ const sizes = {
   /** Header desktop: só as bandeiras. */
   md: 'h-9 w-11',
   /** Menu mobile: segmented control em largura total, bandeira + nome, 48px de altura. */
-  lg: 'h-12 flex-1 gap-2 px-2 text-small font-semibold',
+  lg: 'h-12 min-w-0 flex-auto gap-1.5 px-1 text-[0.8125rem] font-semibold',
 } as const
 
 type LanguageSwitcherProps = {
@@ -69,7 +69,10 @@ export function LanguageSwitcher({ size = 'md', className, onSelect }: LanguageS
                   : 'opacity-55 hover:bg-background/60 hover:opacity-100',
             )}
           >
-            <Flag locale={locale} className="h-4 w-6 shrink-0 rounded-xs" />
+            <Flag
+              locale={locale}
+              className={cn('shrink-0 rounded-xs', size === 'lg' ? 'h-3.5 w-5' : 'h-4 w-6')}
+            />
             {size === 'lg' ? label : null}
           </button>
         )

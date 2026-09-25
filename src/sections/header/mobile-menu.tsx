@@ -41,11 +41,11 @@ export function MobileMenu({ id, className, onNavigate }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-x-0 top-header bottom-0 lg:hidden">
-      <div aria-hidden="true" className="absolute inset-0 bg-hero-ink/30" onClick={onNavigate} />
+      <div aria-hidden="true" className="absolute inset-0 bg-hero-ink/25" onClick={onNavigate} />
       <div
         id={id}
         className={cn(
-          'relative mx-gutter mt-2 flex max-h-[calc(100%-1rem-env(safe-area-inset-bottom))] flex-col overflow-y-auto rounded-panel px-5 pt-2 pb-5 shadow-level-3',
+          'relative mx-gutter mt-3 flex max-h-[calc(100%-1.5rem-env(safe-area-inset-bottom))] flex-col gap-3 overflow-y-auto rounded-panel p-3 shadow-level-3',
           className,
         )}
       >
@@ -55,17 +55,17 @@ export function MobileMenu({ id, className, onNavigate }: MobileMenuProps) {
               key={item.key}
               item={item}
               onClick={onNavigate}
-              className="flex min-h-14 items-center"
+              className="flex min-h-12 items-center rounded-card px-3 transition-colors duration-200 hover:bg-hero-ink/5"
             />
           ))}
         </nav>
-        <div className="mt-6">
+        <div className="pt-1">
           <LanguageSwitcher size="lg" onSelect={onNavigate} />
         </div>
         <Button
           variant="primary"
           size="xl"
-          className="mt-6 w-full"
+          className="w-full"
           onClick={() => {
             onNavigate()
             open()

@@ -32,8 +32,6 @@ export function Header({ variant = 'solid' }: { variant?: HeaderVariant }) {
         'border-b transition-[background-color,border-color,backdrop-filter] duration-200',
         theme.header,
         scrolled || open ? theme.scrolled : theme.top,
-        // Menu aberto: header mais alto (a altura do Container e o topo do card acompanham).
-        open && 'max-lg:[--header-h:4.5rem]',
       )}
     >
       <Container className="flex h-header items-center justify-between gap-4">

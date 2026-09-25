@@ -80,7 +80,7 @@
   --gutter: 1.25rem;
   --section-y: 3.5rem;
   --content-gap: 2rem;
-  --header-h: 3.5rem;
+  --header-h: 4.5rem;
   --logo-h: 1.625rem;
   --logo-h-footer: 2.25rem;
   /* Celular do "Venda por conta própria": no mobile, estreito para caber as anotações ao lado. */
@@ -136,7 +136,7 @@
     --gutter: 2rem;
     --section-y: 6rem;
     --content-gap: 3rem;
-    --header-h: 4rem;
+    --header-h: 4.5rem;
     --logo-h: 1.05rem; /* 60% de 1.75rem */
     --phone-w: clamp(15rem, 68vw, 21.25rem);
     --share-card-w: min(100vw - 2 * var(--gutter), 38rem);

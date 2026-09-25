@@ -49,7 +49,7 @@ export function Logo({ size = 'header', tagline, className }: LogoProps) {
         </span>
       </span>
       {tagline ? (
-        <span className="mt-1 text-eyebrow tracking-[0.24em] text-hero-ink/75 uppercase">
+        <span className="mt-1 text-[0.625rem] leading-none font-semibold tracking-[0.14em] text-hero-ink/75 uppercase lg:text-eyebrow lg:tracking-[0.24em]">
           {tagline}
         </span>
       ) : null}
