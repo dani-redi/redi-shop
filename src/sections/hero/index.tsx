@@ -35,26 +35,26 @@ export function Hero() {
         {/* Sem animação de entrada no celular: o texto é o LCP e aparece no primeiro paint. */}
         <div className="text-center md:animate-hero-enter">
           {/*
-           * Celular: quebra natural e balanceada em 34px. Tablet e desktop: sempre 2 linhas,
-           * com a fonte encolhendo para a linha mais longa caber (hero-fit-title).
+           * Sempre 2 linhas, com a fonte encolhendo para a linha mais longa caber
+           * (hero-fit-title). Celular: "…e ganhe / comissão com IA…"; do tablet em diante:
+           * "…e ganhe comissão / com IA…".
            */}
-          <h1 className="mx-auto text-display hero-fit-title text-hero-ink">
-            <span className="md:block md:whitespace-nowrap">
-              {t('hero.titleA')} {t('hero.titleB')}
-            </span>{' '}
-            <span className="text-hero-mint md:block md:whitespace-nowrap">
-              {t('hero.titleHighlight')}
-            </span>
+          <h1 className="mx-auto text-display hero-fit-title whitespace-nowrap text-hero-ink">
+            <span className="block md:inline">{t('hero.titleM1')}</span> {t('hero.titleM2')}{' '}
+            <span className="text-hero-mint md:block">{t('hero.titleHighlight')}</span>
           </h1>
-          <p className="mx-auto mt-3 max-w-lead text-lead font-medium text-hero-ink/70 md:mt-4 lg:mt-6">
-            {t('hero.description')}
+          {/* Celular: 3 linhas fixas (hero-fit-lead). Do tablet em diante: quebra natural. */}
+          <p className="mx-auto mt-2 max-w-lead text-lead hero-fit-lead font-medium whitespace-nowrap text-hero-ink/70 md:mt-4 md:whitespace-normal lg:mt-6">
+            <span className="block md:inline">{t('hero.descM1')}</span>{' '}
+            <span className="block md:inline">{t('hero.descM2')}</span>{' '}
+            <span className="block md:inline">{t('hero.descM3')}</span>
           </p>
           <Button
             variant="primary"
             size="xl"
             onClick={open}
             {...stickyCtaHide}
-            className="mt-6 md:mt-8"
+            className="mt-5 md:mt-8"
           >
             <ArrowLabel>{t('signupCta.button')}</ArrowLabel>
           </Button>
@@ -66,7 +66,7 @@ export function Hero() {
          */}
         <div
           aria-hidden="true"
-          className="relative mx-auto mt-content h-[12.5rem] w-full max-w-[22rem] md:h-100 md:w-full md:max-w-3xl md:animate-hero-enter md:[animation-delay:120ms] lg:h-116"
+          className="relative mx-auto mt-5 h-[15.75rem] w-full max-w-3xl md:mt-content md:h-100 md:animate-hero-enter md:[animation-delay:120ms] lg:h-116"
         >
           {products.map((product, index) => {
             const visual = heroProducts[index] ?? heroProducts[0]

@@ -109,17 +109,26 @@
   --reveal-stagger: 60ms;
 }
 
-/* Largura em em da linha mais longa do título da hero no desktop (ver hero-fit-title). */
+/*
+ * Largura em em da linha mais longa do título e do subtítulo da hero (ver hero-fit-title e
+ * hero-fit-lead): "wide" do tablet em diante, "narrow" no celular (com folga de ~0.2em).
+ */
 :root {
   --hero-title-fit-wide: 17.1;
+  --hero-title-fit-narrow: 13.9;
+  --hero-lead-fit-narrow: 26.5;
 }
 
 :root:lang(en) {
   --hero-title-fit-wide: 21.2;
+  --hero-title-fit-narrow: 15.4;
+  --hero-lead-fit-narrow: 24.9;
 }
 
 :root:lang(es) {
   --hero-title-fit-wide: 19.3;
+  --hero-title-fit-narrow: 14.5;
+  --hero-lead-fit-narrow: 24.4;
 }
 
 @media (width >= 48rem) {

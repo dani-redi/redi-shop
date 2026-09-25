@@ -58,15 +58,29 @@
 }
 
 /*
- * Título da hero do tablet em diante: 2 linhas fixas, e a fonte encolhe para a linha mais
- * longa caber (largura útil ÷ largura da linha em em, ver --hero-title-fit-wide). No
- * celular o título quebra naturalmente em 34px.
+ * Título da hero: 2 linhas fixas em todas as telas, e a fonte encolhe para a linha mais
+ * longa caber (largura útil ÷ largura da linha em em, ver --hero-title-fit-*).
  */
 @utility hero-fit-title {
+  font-size: min(
+    var(--text-display),
+    calc((100vw - 2 * var(--gutter)) / var(--hero-title-fit-narrow))
+  );
+
   @media (width >= 48rem) {
     font-size: min(
       var(--text-display),
       calc((min(100vw, var(--container-page)) - 2 * var(--gutter)) / var(--hero-title-fit-wide))
+    );
+  }
+}
+
+/* Subtítulo da hero no celular: 3 linhas fixas, com a fonte encolhendo para caber. */
+@utility hero-fit-lead {
+  @media (width < 48rem) {
+    font-size: min(
+      var(--text-lead),
+      calc((100vw - 2 * var(--gutter)) / var(--hero-lead-fit-narrow))
     );
   }
 }
