@@ -6,6 +6,7 @@ const variants = {
   secondary: 'border border-brand/40 text-brand hover:border-brand hover:bg-brand-tint',
   ghost: 'text-foreground hover:bg-brand-tint',
   white: 'bg-background text-foreground shadow-level-3 hover:shadow-level-4',
+  dark: 'bg-hero-ink text-background shadow-level-2 hover:bg-hero-ink/90 hover:shadow-level-3',
   whatsapp: 'bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90',
 } as const
 

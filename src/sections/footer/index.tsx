@@ -63,7 +63,7 @@ export function Footer() {
     >
       <Container className="grid md:grid-cols-2 md:gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-8">
         <div className="pb-4 md:pb-0">
-          <Logo size="footer" className="min-h-11 justify-center" />
+          <Logo size="footer" className="min-h-11" />
           <p className="mt-3 max-w-70 text-small text-muted-foreground md:mt-4">
             {t('footer.tagline')}
           </p>

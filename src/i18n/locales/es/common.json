@@ -28,7 +28,6 @@
     "es": "Español"
   },
   "hero": {
-    "eyebrow": "TU RED DE VENTAS",
     "titleA": "Recomienda productos",
     "titleB": "y gana comisión",
     "titleM1": "Recomienda productos y gana",
@@ -99,10 +98,11 @@
   "signupCta": {
     "title": "Crea tu RediShop gratis",
     "subtitle": "Regístrate ahora para recibir tu invitación a RediShop.",
-    "button": "Quiero mi RediShop →",
-    "note": "Gratis · Sin mensualidad · Sin kit · Sin stock",
-    "appStore": "Descargar en la App Store",
-    "googlePlay": "Descargar en Google Play"
+    "note": "Gratis · Sin mensualidad · Sin kit · Sin stock"
+  },
+  "storeBadges": {
+    "appStore": "Descargar en la",
+    "googlePlay": "Descargar en"
   },
   "salesAssistant": {
     "eyebrow": "TU BRAZO DERECHO EN LAS VENTAS",

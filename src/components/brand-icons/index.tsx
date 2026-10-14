@@ -1,4 +1,4 @@
-import type { SVGProps } from 'react'
+import { useId, type SVGProps } from 'react'
 
 /*
  * Marcas de terceiros em SVG. O lucide-react removeu os ícones de marca na v1,
@@ -15,19 +15,26 @@ export function AppleIcon(props: IconProps) {
   )
 }
 
+/**
+ * Logo atual do Google Play: triângulo de cantos arredondados com as 4 cores se
+ * encontrando no centro. Cores oficiais fixas (não seguem os tokens do tema). O id do
+ * clipPath vem do useId porque o ícone aparece várias vezes na mesma página.
+ */
 export function GooglePlayIcon(props: IconProps) {
+  const clipId = useId()
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        className="fill-store-green"
-        d="M3.3 2.2a1.3 1.3 0 0 0-.3.85v17.9c0 .32.1.61.3.85l10-9.8-10-9.8z"
-      />
-      <path
-        className="fill-store-yellow"
-        d="m13.3 12 3.05-2.98 3.8 2.18c.74.42.74 1.18 0 1.6l-3.8 2.18L13.3 12z"
-      />
-      <path className="fill-store-blue" d="M4.3 1.65 14.55 7.5 11.7 10.3 4.3 1.65z" />
-      <path className="fill-store-red" d="m4.3 22.35 7.4-8.65 2.85 2.8L4.3 22.35z" />
+    <svg viewBox="4.65 3.75 16.5 16.5" aria-hidden="true" {...props}>
+      <defs>
+        <clipPath id={clipId}>
+          <path d="M6 6.26Q6 3.06 8.77 4.66L18.12 10.05Q21.5 12 18.12 13.95L8.77 19.34Q6 20.94 6 17.74Z" />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${clipId})`}>
+        <path fill="#4285F4" d="M12.45 12 0-.45v24.9z" />
+        <path fill="#34A853" d="M12.45 12 0-.45h24v.9z" />
+        <path fill="#FBBC04" d="M12.45 12 24 .45v23.1z" />
+        <path fill="#EA4335" d="M12.45 12 24 23.55v.9H0z" />
+      </g>
     </svg>
   )
 }

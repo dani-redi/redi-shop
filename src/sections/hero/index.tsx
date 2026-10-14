@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next'
-import { Button } from '@/components/button'
-import { ArrowLabel } from '@/components/button/arrow-label'
 import { Container } from '@/components/container'
 import { FeatureItem } from '@/components/feature-item'
 import { ProductCard } from '@/components/product-card'
-import { useWaitlist } from '@/features/waitlist/context'
+import { StoreBadges } from '@/components/store-badges'
 import { stickyCtaHide } from '@/sections/sticky-cta/hide'
 import { FeedCard } from './feed-card'
 import { heroBenefitIcons, heroProducts } from './products'
@@ -25,7 +23,6 @@ function withStoreHighlight(text: string) {
 
 export function Hero() {
   const { t } = useTranslation()
-  const { open } = useWaitlist()
   const products = t('hero.products')
   const benefits = t('hero.benefits')
 
@@ -49,15 +46,7 @@ export function Hero() {
             <span className="block md:inline">{t('hero.descM2')}</span>{' '}
             <span className="block md:inline">{t('hero.descM3')}</span>
           </p>
-          <Button
-            variant="primary"
-            size="xl"
-            onClick={open}
-            {...stickyCtaHide}
-            className="mt-5 md:mt-8"
-          >
-            <ArrowLabel>{t('signupCta.button')}</ArrowLabel>
-          </Button>
+          <StoreBadges {...stickyCtaHide} className="mx-auto mt-5 w-full max-w-sm md:mt-8" />
         </div>
 
         {/*

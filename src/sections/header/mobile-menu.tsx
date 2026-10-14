@@ -1,9 +1,6 @@
 import { useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Button } from '@/components/button'
-import { ArrowLabel } from '@/components/button/arrow-label'
 import { LanguageSwitcher } from '@/components/language-switcher'
-import { useWaitlist } from '@/features/waitlist/context'
+import { StoreBadges } from '@/components/store-badges'
 import { cn } from '@/lib/cn'
 import { NavLink } from './nav-link'
 import { navLinks } from './nav-links'
@@ -16,14 +13,11 @@ type MobileMenuProps = {
 
 /**
  * Menu do celular em card flutuante abaixo do header, sobre um fundo escurecido (tocar
- * fora fecha): links de 56px, idioma em segmented control e o CTA de cadastro em largura
+ * fora fecha): links de 56px, idioma em segmented control e os botões das lojas em largura
  * total. Trava a rolagem da página e marca `data-menu-open` no <html> (o CTA fixo
  * inferior some enquanto o menu está aberto).
  */
 export function MobileMenu({ id, className, onNavigate }: MobileMenuProps) {
-  const { t } = useTranslation()
-  const { open } = useWaitlist()
-
   useEffect(() => {
     const root = document.documentElement
     root.dataset.menuOpen = ''
@@ -62,17 +56,7 @@ export function MobileMenu({ id, className, onNavigate }: MobileMenuProps) {
         <div className="pt-1">
           <LanguageSwitcher size="lg" onSelect={onNavigate} />
         </div>
-        <Button
-          variant="primary"
-          size="xl"
-          className="w-full"
-          onClick={() => {
-            onNavigate()
-            open()
-          }}
-        >
-          <ArrowLabel>{t('signupCta.button')}</ArrowLabel>
-        </Button>
+        <StoreBadges />
       </div>
     </div>
   )

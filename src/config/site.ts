@@ -10,5 +10,8 @@ export const siteConfig = {
     brands: { path: '/marcas' },
     brandsContact: { path: '/marcas', hash: 'falar' },
     demoApp: 'https://app.redi.shop',
+    // TODO: trocar pelos links públicos dos apps nas lojas.
+    appStore: 'https://apps.apple.com/app/idTODO',
+    googlePlay: 'https://play.google.com/store/apps/details?id=TODO',
   },
 } as const

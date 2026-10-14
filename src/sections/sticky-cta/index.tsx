@@ -1,17 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Button } from '@/components/button'
-import { ArrowLabel } from '@/components/button/arrow-label'
-import { useWaitlist } from '@/features/waitlist/context'
+import { StoreBadges } from '@/components/store-badges'
 import { cn } from '@/lib/cn'
 
 /**
- * CTA de cadastro fixo no rodapé do celular: aparece quando o CTA da hero sai da tela e
- * some enquanto um Signup CTA, o footer ou o menu estiverem visíveis. 64px + safe area.
+ * Botões das lojas fixos no rodapé do celular: aparecem quando os da hero saem da tela e
+ * somem enquanto um Signup CTA, o footer ou o menu estiverem visíveis. 64px + safe area.
  */
 export function StickyCta() {
-  const { t } = useTranslation()
-  const { open } = useWaitlist()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -37,9 +32,7 @@ export function StickyCta() {
         visible ? 'translate-y-0' : 'translate-y-full',
       )}
     >
-      <Button variant="primary" size="lg" onClick={open} className="w-full">
-        <ArrowLabel>{t('signupCta.button')}</ArrowLabel>
-      </Button>
+      <StoreBadges size="lg" />
     </div>
   )
 }
