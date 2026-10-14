@@ -1,0 +1,24 @@
+# Hostinger (LiteSpeed, compatível com Apache). Vai para dist/ junto com o build.
+DirectoryIndex index.html
+Options -Indexes
+
+# Arquivos e pastas que existem (/en, /marcas, /assets/…) são servidos direto;
+# qualquer outra rota cai no index.html (SPA).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# HTML sempre revalidado; arquivos com hash no nome (/assets) em cache por 1 ano.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css|webp|woff2|svg|png|jpg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
