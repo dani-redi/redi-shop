@@ -91,17 +91,14 @@ export function SalesAssistant() {
                   <HandwrittenNote className="self-stretch text-[3.3cqw]/[1.2] whitespace-pre-line md:text-note md:whitespace-normal">
                     {note}
                   </HandwrittenNote>
-                  {/* Celular: seta sai do meio do texto, desce e vira para o celular. */}
+                  {/* Seta sai do meio do texto, desce e vira para o celular. */}
                   <HandArrow
                     shape="hook"
                     className={cn(
-                      'mt-[1cqw] w-[9.5cqw] self-center md:hidden',
+                      'mt-[1cqw] w-[9.5cqw] self-center md:mt-2 md:w-[7cqw]',
                       left ? 'translate-x-1/2' : '-translate-x-1/2 -scale-x-100',
-                      !placement.mobileArrow && 'hidden',
+                      !placement.mobileArrow && 'hidden md:block',
                     )}
-                  />
-                  <HandArrow
-                    className={cn('mt-2 hidden w-[7cqw] md:block', !left && '-scale-x-100')}
                   />
                 </div>
               )
